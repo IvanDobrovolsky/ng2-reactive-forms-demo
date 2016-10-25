@@ -15,7 +15,8 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
-        "styles.less"
+        "styles.less",
+        "../node_modules/semantic-ui/dist/semantic.css"
       ],
       "scripts": [],
       "environments": {
