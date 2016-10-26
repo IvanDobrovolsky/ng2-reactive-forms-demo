@@ -1,4 +1,4 @@
-<form class="ui form" novalidate>
+<form class="ui form" novalidate [formGroup]="user">
 
     <h4 class="ui dividing header">User profile:</h4>
 
@@ -6,10 +6,10 @@
         <label>Name</label>
         <div class="two fields">
             <div class="field">
-                <input type="text" name="firstName" placeholder="First Name">
+                <input type="text" name="firstName" formControlName="firstName" placeholder="First Name">
             </div>
             <div class="field">
-                <input type="text" name="lastName" placeholder="Last Name">
+                <input type="text" name="lastName" formControlName="lastName" placeholder="Last Name">
             </div>
         </div>
     </div>
@@ -18,7 +18,7 @@
         <label>Email</label>
         <div class="two fields">
             <div class="field">
-                <input type="email" placeholder="Enter your email">
+                <input type="email" name="email" formControlName="email" placeholder="Enter your email">
             </div>
         </div>
     </div>
@@ -27,31 +27,31 @@
         <label>Gender:</label>
         <div class="field">
             <div class="ui radio checkbox">
-                <input type="radio" name="gender" >
+                <input type="radio" name="gender" value="male" formControlName="gender">
                 <label>Male</label>
             </div>
         </div>
         <div class="field">
             <div class="ui radio checkbox">
-                <input type="radio" name="gender">
+                <input type="radio" name="gender" value="female" formControlName="gender">
                 <label>Female</label>
             </div>
         </div>
     </div>
 
-    <div class="field">
+    <div class="field" formGroupName="birthday">
         <label>Birthday</label>
         <div class="three fields">
             <div class="field">
-                <input type="number" placeholder="Day">
+                <input type="number" formControlName="day" placeholder="Day">
             </div>
 
             <div class="field">
-                <input type="number" placeholder="Month">
+                <input type="number" formControlName="month" placeholder="Month">
             </div>
 
             <div class="field">
-                <input type="number" placeholder="Year">
+                <input type="number" formControlName="year" placeholder="Year">
             </div>
         </div>
     </div>
