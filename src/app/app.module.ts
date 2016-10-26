@@ -5,9 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { UserProfileFormComponent } from './user-profile-form/user-profile-form.component';
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserProfileFormComponent
   ],
   imports: [
     BrowserModule,
