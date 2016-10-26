@@ -47,7 +47,10 @@ import { Gender, User } from './../models/user.model';
 })
 export class UserProfileFormComponent implements OnInit, OnDestroy {
 
+  private readonly currentDay = new Date().getDate();
+  private readonly currentMonth = new Date().getMonth() + 1;
   private readonly currentYear = new Date().getFullYear();
+
   private user: FormGroup;
 
   constructor (private fb: FormBuilder) {
@@ -59,11 +62,11 @@ export class UserProfileFormComponent implements OnInit, OnDestroy {
       firstName: [''],
       lastName: [''],
       email: [''],
-      gender: [Gender[Gender.female]],
+      gender: [Gender[Gender.male]],
       birthday: this.fb.group({
-        day: [1],
-        month: [3],
-        year: [this.currentYear]
+        day: [],
+        month: [],
+        year: []
       })
     });
   }
