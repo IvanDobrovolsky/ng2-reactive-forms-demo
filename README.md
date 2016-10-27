@@ -1,5 +1,18 @@
 # Ng2ReactiveFormsDemo
 
+## Presentation
+http://slides.com/ivandobrovolsky/reactive-forms
+
+## References
+
+
+[Angular2 Forms API: Official docs](https://angular.io/docs/ts/latest/guide/forms.html)
+[Angular2 Dynamic Forms: Offical cookbook](https://angular.io/docs/ts/latest/cookbook/dynamic-form.html)
+[Introduction to Angular2 Forms: Angular University](http://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/)
+[Angular2 Template-driven forms: Todd Motto article about](https://toddmotto.com/angular-2-forms-template-driven)
+[Angular2 Reactive forms: Todd Motto article about](https://toddmotto.com/angular-2-forms-reactive)
+
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
 
 ## Development server
@@ -13,18 +26,9 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
 
-## Running unit tests
+## AoT
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Deploying to Github Pages
-
-Run `ng github-pages:deploy` to deploy to Github Pages.
+Run `ng build` or `ng serve` with `--aot` flag.
 
 ## Further help
 
