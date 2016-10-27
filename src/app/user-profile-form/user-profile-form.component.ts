@@ -1,5 +1,5 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, FormGroup, Validators }       from '@angular/forms';
+import { Component, OnInit, OnDestroy }        from '@angular/core';
+import { FormBuilder, FormGroup, Validators }  from '@angular/forms';
 
 import { Gender, User } from './../models/user.model';
 
@@ -66,9 +66,9 @@ export class UserProfileFormComponent implements OnInit, OnDestroy {
       email: ['', [Validators.required, Validators.pattern(UserProfileFormValidator.emailPattern)]],
       gender: [Gender[Gender.male], [Validators.required]],
       birthday: this.fb.group({
-        day: ['', [Validators.required]],
-        month: ['', [Validators.required]],
-        year: ['', [Validators.required]]
+        day: ['', [Validators.required, UserProfileFormValidator.numberInRange(1, 31)]],
+        month: ['', [Validators.required, UserProfileFormValidator.numberInRange(1, 12)]],
+        year: ['', [Validators.required, UserProfileFormValidator.numberInRange(1900, this.currentYear)]]
       })
     });
   }

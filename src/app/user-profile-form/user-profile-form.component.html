@@ -63,6 +63,7 @@
                 <input type="number" formControlName="day" placeholder="{{currentDay}}">
                 <div class="error">
                     <p *ngIf="user.get('birthday').get('day').hasError('required') && user.get('birthday').get('day').touched">Day is required</p>
+                    <p *ngIf="user.get('birthday').get('day').hasError('invalidRange') && user.get('birthday').get('day').dirty">Should be a value from 1 to 31</p>
                 </div>
             </div>
 
@@ -70,6 +71,7 @@
                 <input type="number" formControlName="month" placeholder="{{currentMonth}}">
                 <div class="error">
                     <p *ngIf="user.get('birthday').get('month').hasError('required') && user.get('birthday').get('month').touched">Month is required</p>
+                    <p *ngIf="user.get('birthday').get('month').hasError('invalidRange') && user.get('birthday').get('month').dirty">Should be a value from 1 to 31</p>
                 </div>
             </div>
 
@@ -77,6 +79,8 @@
                 <input type="number" formControlName="year" placeholder="{{currentYear}}">
                 <div class="error">
                     <p *ngIf="user.get('birthday').get('year').hasError('required') && user.get('birthday').get('year').touched">Year is required</p>
+                    <p *ngIf="user.get('birthday').get('year').hasError('invalidRange') && user.get('birthday').get('year').dirty">Should be a value from 1900 to {{currentYear}}</p>
+
                 </div>
             </div>
         </div>
