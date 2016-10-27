@@ -60,21 +60,21 @@
         <label>Birthday</label>
         <div class="three fields">
             <div class="field" [ngClass]="{'error': user.get('birthday').get('day').hasError('required') && user.get('birthday').get('day').touched}">
-                <input type="number" formControlName="day" placeholder="Day">
+                <input type="number" formControlName="day" placeholder="{{currentDay}}">
                 <div class="error">
                     <p *ngIf="user.get('birthday').get('day').hasError('required') && user.get('birthday').get('day').touched">Day is required</p>
                 </div>
             </div>
 
             <div class="field" [ngClass]="{'error': user.get('birthday').get('month').hasError('required') && user.get('birthday').get('month').touched}">
-                <input type="number" formControlName="month" placeholder="Month">
+                <input type="number" formControlName="month" placeholder="{{currentMonth}}">
                 <div class="error">
                     <p *ngIf="user.get('birthday').get('month').hasError('required') && user.get('birthday').get('month').touched">Month is required</p>
                 </div>
             </div>
 
             <div class="field" [ngClass]="{'error': user.get('birthday').get('year').hasError('required') && user.get('birthday').get('year').touched}">
-                <input type="number" formControlName="year" placeholder="Year">
+                <input type="number" formControlName="year" placeholder="{{currentYear}}">
                 <div class="error">
                     <p *ngIf="user.get('birthday').get('year').hasError('required') && user.get('birthday').get('year').touched">Year is required</p>
                 </div>
