@@ -104,11 +104,7 @@ export class UserProfileFormComponent implements OnInit, OnDestroy {
 
       console.log(userFormData, "Submitted!");
 
-      this.resetForm();
+      this.user.reset();
     }
-  }
-
-  private resetForm (): void {
-    this.user.reset();
   }
 }
