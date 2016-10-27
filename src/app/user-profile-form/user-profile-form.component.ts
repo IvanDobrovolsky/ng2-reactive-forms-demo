@@ -59,8 +59,8 @@ export class UserProfileFormComponent implements OnInit, OnDestroy {
 
   public ngOnInit(): void {
     this.user = this.fb.group({
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
+      firstName: ['', [Validators.required, Validators.maxLength(10)]],
+      lastName: ['', [Validators.required, Validators.maxLength(10)]],
       email: ['', [Validators.required]],
       gender: [Gender[Gender.male], [Validators.required]],
       birthday: this.fb.group({

@@ -5,18 +5,23 @@
     <div class="field">
         <label>Name</label>
         <div class="two fields">
-            <div class="field" [ngClass]="{'error': user.get('firstName').hasError('required') && user.get('firstName').touched}">
+            <div class="field"
+                 [ngClass]="{'error': (user.get('firstName').hasError('required') && user.get('firstName').touched) ||
+                                       user.get('firstName').hasError('maxlength') && user.get('firstName').dirty}">
                 <input type="text" name="firstName" formControlName="firstName" placeholder="First Name">
-
                 <div class="error">
                     <p *ngIf="user.get('firstName').hasError('required') && user.get('firstName').touched">First name is required</p>
+                    <p *ngIf="user.get('firstName').hasError('maxlength') && user.get('firstName').dirty">Name cannot be more than 10 characters</p>
                 </div>
             </div>
 
-            <div class="field" [ngClass]="{'error': user.get('lastName').hasError('required') && user.get('lastName').touched}">
+            <div class="field"
+                 [ngClass]="{'error': (user.get('lastName').hasError('required') && user.get('lastName').touched) ||
+                                       user.get('lastName').hasError('maxlength') && user.get('lastName').dirty}">
                 <input type="text" name="lastName" formControlName="lastName" placeholder="Last Name">
                 <div class="error">
                     <p *ngIf="user.get('lastName').hasError('required') && user.get('lastName').touched">Last name is required</p>
+                    <p *ngIf="user.get('lastName').hasError('maxlength') && user.get('lastName').dirty">Name cannot be more than 10 characters</p>
                 </div>
             </div>
         </div>
