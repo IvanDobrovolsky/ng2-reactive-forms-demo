@@ -78,9 +78,16 @@ export class UserProfileFormComponent implements OnInit, OnDestroy {
 
   private submit (): void {
     if (!!this.user.valid) {
+
       const userFormData: User = this.user.value;
 
       console.log(userFormData, "Submitted!");
+
+      this.resetForm();
     }
+  }
+
+  private resetForm (): void {
+    this.user.reset();
   }
 }
