@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators }       from '@angular/forms';
 
 import { Gender, User } from './../models/user.model';
 
+import { UserProfileFormValidator } from './user-profile-form.validator';
+
 /**
  Validators:
    firstName - required, capitalized, a-z
@@ -51,8 +53,6 @@ export class UserProfileFormComponent implements OnInit, OnDestroy {
   private readonly currentMonth = new Date().getMonth() + 1;
   private readonly currentYear = new Date().getFullYear();
 
-  private static readonly emailPattern = "^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
-
   private user: FormGroup;
 
   constructor (private fb: FormBuilder) {
@@ -63,7 +63,7 @@ export class UserProfileFormComponent implements OnInit, OnDestroy {
     this.user = this.fb.group({
       firstName: ['', [Validators.required, Validators.maxLength(10)]],
       lastName: ['', [Validators.required, Validators.maxLength(10)]],
-      email: ['', [Validators.required, Validators.pattern(UserProfileFormComponent.emailPattern)]],
+      email: ['', [Validators.required, Validators.pattern(UserProfileFormValidator.emailPattern)]],
       gender: [Gender[Gender.male], [Validators.required]],
       birthday: this.fb.group({
         day: ['', [Validators.required]],
