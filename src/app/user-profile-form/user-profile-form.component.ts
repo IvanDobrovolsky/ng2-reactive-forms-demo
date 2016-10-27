@@ -1,6 +1,11 @@
 import { Component, OnInit, OnDestroy }        from '@angular/core';
 import { FormBuilder, FormGroup, Validators }  from '@angular/forms';
 
+// Operators
+import 'rxjs/add/operator/debounceTime';
+import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/map';
+
 import { Gender, User } from './../models/user.model';
 
 import { UserProfileFormValidator } from './user-profile-form.validator';
@@ -71,6 +76,22 @@ export class UserProfileFormComponent implements OnInit, OnDestroy {
         year: ['', [Validators.required, UserProfileFormValidator.numberInRange(1900, this.currentYear)]]
       })
     });
+
+    const toLowerCase = (char: string): string => char.toLowerCase();
+    const isTextCharacter = (char: string): boolean => /^[a-zA-Z\s]+$/.test(char) && !!char;
+    const toApiEndpoint = (char: string): string => `http://apiurl/${char}`;
+    const makeFakeHttpRequest = (url: string): string => JSON.stringify({data: `***Data from the faked server ${url}***`});
+
+    //Simple example of how reactivity works
+    this.user.get('firstName').valueChanges
+      .debounceTime(500)
+      .filter(isTextCharacter)
+      .map(toLowerCase)
+      .map(toApiEndpoint)
+      .map(makeFakeHttpRequest)
+      .subscribe(value => {
+        console.log(`Retrieved from fake server : ${value}`);
+      });
   }
 
   public ngOnDestroy(): void {
