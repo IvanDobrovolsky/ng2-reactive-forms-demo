@@ -7,9 +7,13 @@ http://slides.com/ivandobrovolsky/reactive-forms
 
 
 [Angular2 Forms API: Official docs](https://angular.io/docs/ts/latest/guide/forms.html)
+
 [Angular2 Dynamic Forms: Offical cookbook](https://angular.io/docs/ts/latest/cookbook/dynamic-form.html)
+
 [Introduction to Angular2 Forms: Angular University](http://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/)
+
 [Angular2 Template-driven forms: Todd Motto article about](https://toddmotto.com/angular-2-forms-template-driven)
+
 [Angular2 Reactive forms: Todd Motto article about](https://toddmotto.com/angular-2-forms-reactive)
 
 
