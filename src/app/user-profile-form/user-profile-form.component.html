@@ -34,6 +34,7 @@
                 <input type="email" name="email" formControlName="email" placeholder="Enter your email">
                 <div class="error">
                     <p *ngIf="user.get('email').hasError('required') && user.get('email').touched">Email is required</p>
+                    <p *ngIf="user.get('email').hasError('pattern') && user.get('email').dirty">Should be a valid email address </p>
                 </div>
             </div>
         </div>
