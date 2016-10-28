@@ -12,9 +12,9 @@ http://slides.com/ivandobrovolsky/reactive-forms
 
 [Introduction to Angular2 Forms: Angular University](http://blog.angular-university.io/introduction-to-angular-2-forms-template-driven-vs-model-driven/)
 
-[Angular2 Template-driven forms: Todd Motto article about](https://toddmotto.com/angular-2-forms-template-driven)
+[Angular2 Template-driven forms: Todd Motto article](https://toddmotto.com/angular-2-forms-template-driven)
 
-[Angular2 Reactive forms: Todd Motto article about](https://toddmotto.com/angular-2-forms-reactive)
+[Angular2 Reactive forms: Todd Motto article](https://toddmotto.com/angular-2-forms-reactive)
 
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.17.
